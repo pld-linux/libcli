@@ -1,5 +1,5 @@
 Summary:	Cisco-like telnet command-line library
-Summary(pl):	Cisco-podobna biblioteka telnet
+Summary(pl):	Biblioteka Cisco-podobnej linii poleceñ telnetu
 Name:		libcli
 Version:	1.1.0
 Release:	0.1
@@ -7,8 +7,7 @@ Group:		Applications/Networking
 License:	LGPL
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	43aa6d438fd75bc80f512d5756bb5d2c
-URL:		http://www.sf.net/projects/libcli
-Requires(post,postun):	/sbin/ldconfig
+URL:		http://www.sf.net/projects/libcli/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -18,31 +17,53 @@ which supports command-line editing, history, authentication and
 callbacks for a user-definable function tree.
 
 %description -l pl
-libcli dostarcza wspó³dzielon± bibliotekê
+Pakiet libcli dostarcza wspó³dzielon± bibliotekê do w³±czania
+Cisco-podobnego interfejsu linii poleceñ do innego oprogramowania.
+Jest to interfejs telnetu, który obs³uguje edycjê linii poleceñ,
+historiê, uwierzytelnienie i callbacki do definiowalnego przez
+u¿ytkownika drzewa funkcji.
+
+%package devel
+Summary:	libcli header files
+Summary(pl):	Pliki nag³ówkowe libcli
+Group:		Development/Libraries
+Requires:	%{name} = %{version}
+
+%description devel
+Header files for libcli library.
+
+%description devel -l pl
+Pliki nag³ówkowe biblioteki libcli.
 
 %prep
 %setup -q
 
 %build
-
 %{__make} \
 	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} PREFIX=$RPM_BUILD_ROOT%{_prefix} install
-ln -sf %{_libdir}/libcli.so.1.1.0 $RPM_BUILD_ROOT%{_libdir}/libcli.so
+%{__make} install \
+	PREFIX=$RPM_BUILD_ROOT%{_prefix}
 
-
-%post
-/sbin/ldconfig
+cd $RPM_BUILD_ROOT%{_libdir}
+ln -sf libcli.so.*.*.* libcli.so
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
-%doc README Doc/usersguide.html Doc/developers.html
-%{_libdir}/*.so*
+%doc README Doc/usersguide.html
+%attr(755,root,root) %{_libdir}/*.so.*.*.*
+
+%files devel
+%defattr(644,root,root,755)
+%doc Doc/developers.html
+%{_libdir}/*.so
 %{_includedir}/*.h
