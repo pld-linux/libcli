@@ -6,6 +6,7 @@ Release:	0.1
 Group:		Applications/Networking
 License:	LGPL
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	43aa6d438fd75bc80f512d5756bb5d2c
 URL:		http://www.sf.net/projects/libcli
 Requires(post,postun):	/sbin/ldconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
