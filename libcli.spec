@@ -40,16 +40,17 @@ Pliki nag³ówkowe biblioteki libcli.
 
 %build
 %{__make} \
-	CFLAGS="%{rpmcflags}"
+	CFLAGS="%{rpmcflags}" \
+	LDFLAGS='%{rpmldflags} -shared -nostartfiles -Wl,-soname,libcli.so.$(MAJOR)'
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}}
 
-%{__make} install \
-	PREFIX=$RPM_BUILD_ROOT%{_prefix}
-
-cd $RPM_BUILD_ROOT%{_libdir}
-ln -sf libcli.so.*.*.* libcli.so
+install libcli.so.*.*.* $RPM_BUILD_ROOT%{_libdir}
+install libcli.h $RPM_BUILD_ROOT%{_includedir}
+# can be expanded in current directory
+ln -sf libcli.so.*.*.* $RPM_BUILD_ROOT%{_libdir}/libcli.so
 
 %clean
 rm -rf $RPM_BUILD_ROOT
