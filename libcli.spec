@@ -3,9 +3,9 @@ Summary(pl):	Biblioteka Cisco-podobnej linii poleceñ telnetu
 Name:		libcli
 Version:	1.8.5
 Release:	1
-Group:		Applications/Networking
 License:	LGPL
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Group:		Applications/Networking
+Source0:	http://dl.sourceforge.net/libcli/%{name}-%{version}.tar.gz
 # Source0-md5:	0fdd30df5a8c1388a4549751ba61247a
 URL:		http://www.sf.net/projects/libcli/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
