@@ -1,0 +1,1 @@
+- fixed pl, separated -devel, changed symlink within %{_libdir} to relative
