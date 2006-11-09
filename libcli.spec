@@ -27,7 +27,7 @@ u¿ytkownika drzewa funkcji.
 Summary:	libcli header files
 Summary(pl):	Pliki nag³ówkowe libcli
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libcli library.
