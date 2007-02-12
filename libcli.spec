@@ -1,5 +1,5 @@
 Summary:	Cisco-like telnet command-line library
-Summary(pl):	Biblioteka Cisco-podobnej linii poleceñ telnetu
+Summary(pl.UTF-8):   Biblioteka Cisco-podobnej linii poleceÅ„ telnetu
 Name:		libcli
 Version:	1.8.5
 Release:	1
@@ -16,24 +16,24 @@ command-line interface into other software. It's a telnet interface
 which supports command-line editing, history, authentication and
 callbacks for a user-definable function tree.
 
-%description -l pl
-Pakiet libcli dostarcza wspó³dzielon± bibliotekê do w³±czania
-Cisco-podobnego interfejsu linii poleceñ do innego oprogramowania.
-Jest to interfejs telnetu, który obs³uguje edycjê linii poleceñ,
-historiê, uwierzytelnienie i callbacki do definiowalnego przez
-u¿ytkownika drzewa funkcji.
+%description -l pl.UTF-8
+Pakiet libcli dostarcza wspÃ³Å‚dzielonÄ… bibliotekÄ™ do wÅ‚Ä…czania
+Cisco-podobnego interfejsu linii poleceÅ„ do innego oprogramowania.
+Jest to interfejs telnetu, ktÃ³ry obsÅ‚uguje edycjÄ™ linii poleceÅ„,
+historiÄ™, uwierzytelnienie i callbacki do definiowalnego przez
+uÅ¼ytkownika drzewa funkcji.
 
 %package devel
 Summary:	libcli header files
-Summary(pl):	Pliki nag³ówkowe libcli
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe libcli
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libcli library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki libcli.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki libcli.
 
 %prep
 %setup -q
