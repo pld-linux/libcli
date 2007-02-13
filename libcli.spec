@@ -1,5 +1,5 @@
 Summary:	Cisco-like telnet command-line library
-Summary(pl.UTF-8):   Biblioteka Cisco-podobnej linii poleceń telnetu
+Summary(pl.UTF-8):	Biblioteka Cisco-podobnej linii poleceń telnetu
 Name:		libcli
 Version:	1.8.5
 Release:	1
@@ -25,7 +25,7 @@ użytkownika drzewa funkcji.
 
 %package devel
 Summary:	libcli header files
-Summary(pl.UTF-8):   Pliki nagłówkowe libcli
+Summary(pl.UTF-8):	Pliki nagłówkowe libcli
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
