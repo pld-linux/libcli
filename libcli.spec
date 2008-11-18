@@ -1,13 +1,13 @@
 Summary:	Cisco-like telnet command-line library
 Summary(pl.UTF-8):	Biblioteka Cisco-podobnej linii poleceń telnetu
 Name:		libcli
-Version:	1.9.0
+Version:	1.9.4
 Release:	1
 License:	LGPL
 Group:		Applications/Networking
-Source0:	http://dl.sourceforge.net/libcli/%{name}-%{version}.tar.gz
-# Source0-md5:	6102e037818bc8fb086ae576ebfa90f2
-URL:		http://www.sf.net/projects/libcli/
+Source0:	http://libcli.googlecode.com/files/%{name}-%{version}.tar.gz
+# Source0-md5:	b917617d21b90db214971efe64a33416
+URL:		http://code.google.com/p/libcli/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -61,11 +61,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README Doc/usersguide.html
+%doc README
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc Doc/developers.html
 %{_libdir}/*.so
 %{_includedir}/*.h
