@@ -63,10 +63,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%attr(755,root,root) %{_libdir}/*.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/*.so.1
+%attr(755,root,root) %{_libdir}/libcli.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libcli.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/*.so
-%{_includedir}/*.h
+%attr(755,root,root) %{_libdir}/libcli.so
+%{_includedir}/libcli.h
