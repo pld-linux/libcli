@@ -52,6 +52,7 @@ install libcli.so.*.*.* $RPM_BUILD_ROOT%{_libdir}
 install libcli.h $RPM_BUILD_ROOT%{_includedir}
 # can be expanded in current directory
 ln -sf libcli.so.*.*.* $RPM_BUILD_ROOT%{_libdir}/libcli.so
+ln -sf libcli.so.*.*.* $RPM_BUILD_ROOT%{_libdir}/libcli.so.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,6 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/*.so.1
 
 %files devel
 %defattr(644,root,root,755)
